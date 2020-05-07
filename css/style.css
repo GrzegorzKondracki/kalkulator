@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrap {
+    font-size: 21px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 100px 100px 100px 100px 100px 100px;
+    column-gap: 5px;
+    row-gap: 5px;
+}
+
+.item {
+    background-color: ghostwhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 21px;
+}
+
+.item:hover,
+.specCalFunc:hover {
+    background-color:#cfcfcf;
+}
+
+.function {
+    background-color: #eaeaec;
+}
+
+.specCalFunctions{
+    display: flex;
+    list-style-type: none;
+    background-color:#dedee0;
+}
+
+.specCalFunc {
+    width: 70px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.history,
+.result {
+    background-color: #dedee0;
+    height: 50px;
+}
+
+.result {
+    font-size: 42px;
+    font-weight: bold;
+}
+
+.history {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.history span {
+    width: 23%;
+}
