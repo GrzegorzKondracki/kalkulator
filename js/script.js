@@ -1,14 +1,23 @@
 const digits = document.getElementsByClassName('digit');
+
 let result = document.getElementsByClassName('result');
 
-var showResult = function () {
+let showResult = '';
 
+var takenDigit = '';
+
+function selectDigit(e) {
+    takenDigit = e.target.textContent;
+    showResult += takenDigit;
+
+    console.log(showResult);
+    console.log(takenDigit);
 }
 
 
 
 
-document.addEventListener('click', takeDigit);
+document.addEventListener('click', selectDigit);
 
 
 
