@@ -1,23 +1,41 @@
 const digits = document.getElementsByClassName('digit');
-
 let result = document.getElementsByClassName('result');
 
-let showResult = '';
+// let showResult = '';
+let takenDigits = [];
+let action = '';
 
-var takenDigit = '';
+let score = `${takenDigits[0]} ${action} ${takenDigits[1]}`;
 
-function selectDigit(e) {
-    takenDigit = e.target.textContent;
-    showResult += takenDigit;
 
-    console.log(showResult);
-    console.log(takenDigit);
+
+function showResult(e) {
+    let takenMark = e.target.textContent;
+    if (takenMark.classList.contains(digit)) {
+        takenDigits.push(takenMark);
+    }
 }
 
+document.addEventListener('click', showResult);
+// document.addEventListener('click', selectDigit);
+
+console.log(takenDigits);
+// function selectDigit(e) {
+//     let takenDigit = e.target.textContent;
+//     takenDogits.push("takenDigit");
+//     showResult += takenDigit;
+
+//     console.log(showResult);
+//     console.log(takenDigit);
+// }
+
+// let operation = function (e) {
+//     action = e.target.textContent
+
+// }
 
 
 
-document.addEventListener('click', selectDigit);
 
 
 
