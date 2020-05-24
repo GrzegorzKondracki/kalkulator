@@ -1,55 +1,42 @@
 const digits = document.getElementsByClassName('digit');
+const c = document.getElementById("clear");
+
 let result = document.getElementsByClassName('result');
+let history = document.querySelector('.history span');
 
-// let showResult = '';
-let takenDigits = [];
+let takenDigits = ["test"];
+console.log("takenDigits", takenDigits);
+
 let action = '';
-
-let score = `${takenDigits[0]} ${action} ${takenDigits[1]}`;
-
-
+console.log("action", action);
 
 function showResult(e) {
-    let takenMark = e.target.textContent;
-    if (takenMark.classList.contains(digit)) {
-        takenDigits.push(takenMark);
+    let takenMark = e.target;
+    console.log("takenMark", takenMark);
+
+    if (takenMark.classList.contains("digit")) {
+        takenDigits.push(takenMark.textContent);
+        console.log(takenDigits);
     }
+
+    function foo() {
+        history.textContent += takenMark.textContent;
+    }
+
+    foo();
 }
 
-document.addEventListener('click', showResult);
-// document.addEventListener('click', selectDigit);
 
-console.log(takenDigits);
-// function selectDigit(e) {
-//     let takenDigit = e.target.textContent;
-//     takenDogits.push("takenDigit");
-//     showResult += takenDigit;
+function clear() {
+    history.textContent = '0';
+}
 
-//     console.log(showResult);
-//     console.log(takenDigit);
-// }
+// let score = `${takenDigits[0]} ${takenDigits[1]}`;
+// let score = `${takenDigits[0]} ${action} ${takenDigits[1]}`;
+// console.log("score", score);
 
-// let operation = function (e) {
-//     action = e.target.textContent
+for (i = 0; i < 10; i++) {
+    digits[i].addEventListener('click', showResult);
+}
 
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-// let index = '8';
-// let value = '';
-
-// value = digits[index].textContent;
-
-// result.appendChild(value);
-
-// result.textContent = 2;
+c.addEventListener('click', clear);
