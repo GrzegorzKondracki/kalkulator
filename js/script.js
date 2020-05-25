@@ -1,14 +1,11 @@
 const digits = document.getElementsByClassName('digit');
 const c = document.getElementById("clear");
+const equal = document.getElementById("equal");
 
-let result = document.getElementsByClassName('result');
 let history = document.querySelector('.history span');
-
-let takenDigits = ["test"];
-console.log("takenDigits", takenDigits);
-
+let takenDigits = [];
 let action = '';
-console.log("action", action);
+let score;
 
 function showResult(e) {
     let takenMark = e.target;
@@ -16,7 +13,7 @@ function showResult(e) {
 
     if (takenMark.classList.contains("digit")) {
         takenDigits.push(takenMark.textContent);
-        console.log(takenDigits);
+        console.log('takenDigits', takenDigits);
     }
 
     function foo() {
@@ -24,19 +21,32 @@ function showResult(e) {
     }
 
     foo();
-}
 
+    function calc() {
+        score = Number(takenDigits[0]) + Number(takenDigits[1]);
+        history.textContent = score;
+    }
+
+    equal.addEventListener('click', calc);
+}
 
 function clear() {
     history.textContent = '0';
 }
 
-// let score = `${takenDigits[0]} ${takenDigits[1]}`;
-// let score = `${takenDigits[0]} ${action} ${takenDigits[1]}`;
-// console.log("score", score);
+// const score = `${ takenDigits[0] } ${ takenDigits[1] } ${ takenDigits[2] } ${ takenDigits[3] } ${ takenDigits[4] } ${ takenDigits[5] } ${ takenDigits[6] } ${ takenDigits[7] } ${ takenDigits[8] } ${ takenDigits[9] } `
+
+// function calc() {
+//     let score = Number(takenDigits[0]);
+// }
+
 
 for (i = 0; i < 10; i++) {
     digits[i].addEventListener('click', showResult);
 }
 
 c.addEventListener('click', clear);
+
+
+console.log("takenDigits", takenDigits);
+console.log("action", action);
