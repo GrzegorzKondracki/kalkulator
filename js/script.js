@@ -6,7 +6,7 @@ let history = document.querySelector('.history span');
 let takenDigits = [];
 let action = '';
 let score;
-
+let mark = '+';
 function showResult(e) {
     let takenMark = e.target;
     console.log("takenMark", takenMark);
@@ -33,6 +33,15 @@ function showResult(e) {
 function clear() {
     history.textContent = '0';
 }
+
+// if (history.textContent.includes("+")) {
+function add() {
+    let x = Number(takenDigits[0]);
+    let y = Number(takenDigits[1]);
+    let result = x + y;
+    history.textContent = result;
+}
+// }
 
 // const score = `${ takenDigits[0] } ${ takenDigits[1] } ${ takenDigits[2] } ${ takenDigits[3] } ${ takenDigits[4] } ${ takenDigits[5] } ${ takenDigits[6] } ${ takenDigits[7] } ${ takenDigits[8] } ${ takenDigits[9] } `
 
