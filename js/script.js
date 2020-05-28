@@ -7,11 +7,17 @@ let takenDigits = [];
 let action = '';
 let score;
 let mark = '+';
+
 function showResult(e) {
     let takenMark = e.target;
     console.log("takenMark", takenMark);
 
-    if (takenMark.classList.contains("digit")) {
+    // if (takenMark.classList.contains("digit")) {
+    //     takenDigits.push(takenMark.textContent);
+    //     console.log('takenDigits', takenDigits);
+    // }
+
+    if (takenMark.classList.contains("digit") || takenMark.classList.contains("action")) {
         takenDigits.push(takenMark.textContent);
         console.log('takenDigits', takenDigits);
     }
@@ -22,32 +28,40 @@ function showResult(e) {
 
     foo();
 
-    function calc() {
-        score = Number(takenDigits[0]) + Number(takenDigits[1]);
-        history.textContent = score;
+    if (history.textContent.includes('+')) {
+        add();
+    } else if (history.textContent.includes('*')) {
+        multiply();
     }
 
-    equal.addEventListener('click', calc);
+
+    // function calc() {
+    //     score = Number(takenDigits[0]) + Number(takenDigits[1]);
+    //     history.textContent = score;
+    // }
+
+    // equal.addEventListener('click', calc);
 }
 
 function clear() {
     history.textContent = '0';
 }
 
-// if (history.textContent.includes("+")) {
+
 function add() {
     let x = Number(takenDigits[0]);
     let y = Number(takenDigits[1]);
     let result = x + y;
     history.textContent = result;
 }
-// }
 
-// const score = `${ takenDigits[0] } ${ takenDigits[1] } ${ takenDigits[2] } ${ takenDigits[3] } ${ takenDigits[4] } ${ takenDigits[5] } ${ takenDigits[6] } ${ takenDigits[7] } ${ takenDigits[8] } ${ takenDigits[9] } `
+function multiply() {
+    let x = Number(takenDigits[0]);
+    let y = Number(takenDigits[1]);
+    let result = x * y;
+    history.textContent = result;
+}
 
-// function calc() {
-//     let score = Number(takenDigits[0]);
-// }
 
 
 for (i = 0; i < 10; i++) {
@@ -55,7 +69,8 @@ for (i = 0; i < 10; i++) {
 }
 
 c.addEventListener('click', clear);
-
+// equal.addEventListener('click', add)
+equal.addEventListener('click', multiply)
 
 console.log("takenDigits", takenDigits);
 console.log("action", action);
