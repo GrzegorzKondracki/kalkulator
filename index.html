@@ -11,49 +11,28 @@
 <body>
 
     <div class="wrap">
-        <div class="result"></div>
-        <div class="history">
-            <div>History:
-                <span></span>
-            </div>
-        </div>
 
-        <div>
-            <ul class="specCalFunctions">
-                <li class="specCalFunc">MC</li>
-                <li class="specCalFunc">MR</li>
-                <li class="specCalFunc">M+</li>
-                <li class="specCalFunc">M-</li>
-                <li class="specCalFunc">MS</li>
-            </ul>
-        </div>
-
+        <input type="textView" class="textView" name="textView">
 
         <div class="grid-container">
-            <div class="item function">%</div>
-            <div class="item function">CE</div>
-            <div class="item function" id="clear">C</div>
-            <div class="item function">delete</div>
-            <div class="item function">1/x</div>
-            <div class="item function">x^2</div>
-            <div class="item function">sqrt</div>
-            <div class="item function">/</div>
-            <div class="item digit">7</div>
-            <div class="item digit">8</div>
-            <div class="item digit">9</div>
-            <div class="item function action">x</div>
-            <div class="item digit">4</div>
-            <div class="item digit">5</div>
-            <div class="item digit">6</div>
-            <div class="item function action">-</div>
-            <div class="item digit">1</div>
-            <div class="item digit">2</div>
-            <div class="item digit">3</div>
-            <div class="item function action">+</div>
-            <div class="item">+/-</div>
-            <div class="item digit">0</div>
-            <div class="item">.</div>
-            <div class="item function" id="equal">=</div>
+            <button class="btn" value="delete" onclick="insert(delete)">delete</button>
+            <button class="btn" value="C" onclick="insert()">C</button>
+            <button class="btn" value="/" onclick="insert('/')">/</button>
+
+            <button class="btn" value="+" onclick="insert('+')">+</button>
+            <button class="btn" value="7" onclick="insert(7)">7</button>
+            <button class="btn" value="8" onclick="insert(8)">8</button>
+            <button class="btn" value="9" onclick="insert(9)">9</button>
+            <button class="btn" value="x" onclick="insert(x)">x</button>
+            <button class="btn" value="4" onclick="insert(4)">4</button>
+            <button class="btn" value="5" onclick="insert(5)">5</button>
+            <button class="btn" value="6" onclick="insert(6)">6</button>
+            <button class="btn" value="-" onclick="insert('-')">-</button>
+            <button class="btn" value="1" onclick="insert(1)">1</button>
+            <button class="btn" value="2" onclick="insert(2)">2</button>
+            <button class="btn" value="3" onclick="insert(3)">3</button>
+            <button class="btn" value="=" onclick="insert('=')">=</button>
+            <button class="btn" value="0" onclick="insert(0)">0</button>
         </div>
     </div>
 
