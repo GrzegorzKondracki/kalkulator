@@ -1,8 +1,28 @@
+let result = document.querySelector(".result");
+const c = document.getElementById("c");
+const removeBtn = document.getElementById("delete");
+
 function insert(num) {
-    document.textView.value = document.textView.value + num;
+    result.textContent = result.textContent + num;
 }
 
+function equal() {
+    score = eval(result.textContent);
+    result.textContent = score;
+    console.log(result)
+}
 
+c.addEventListener('click', clear);
+function clear() {
+    result.textContent = '';
+    console.log(result);
+}
+
+removeBtn.addEventListener('click', remove);
+function remove() {
+    index = result.textContent.length - 1;
+    result.textContent = result.textContent.substr(0, index);
+}
 
 
 
